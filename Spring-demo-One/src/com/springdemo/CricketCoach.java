@@ -2,23 +2,22 @@ package com.springdemo;
 
 public class CricketCoach implements Coach {
 
-	
-	
 	private FortuneService fortuneService;
-	
-	// Add the fields for emailAddress and teams 
-	
+
+	// Add the fields for emailAddress and teams
+
 	private String emailAddress;
 	private String team;
+
 	// Create a no-arg constructor
-	 public CricketCoach() {
-		 System.out.println("CricketCoach: inside no-arg Constructor");
-		
+	public CricketCoach() {
+		System.out.println("CricketCoach: inside no-arg Constructor");
+
 	}
-	 
-	// our setter Methode 
+
+	// our setter Methode
 	public void setFortuneService(FortuneService fortuneService) {
-		 System.out.println("CricketCoach: inside Setter method - setFortuneService");
+		System.out.println("CricketCoach: inside Setter method - setFortuneService");
 		this.fortuneService = fortuneService;
 	}
 
@@ -33,21 +32,20 @@ public class CricketCoach implements Coach {
 		// TODO Auto-generated method stub
 		return fortuneService.getFotune();
 	}
-	
-	 public String getEmailAddress() {
+
+	public String getEmailAddress() {
 		return emailAddress;
 	}
-	 public void setEmailAddress(String emailAddress) {
-		 System.out.println("CricketCoach: inside Setter method - setEmailAddress");
-			this.emailAddress = emailAddress;
-		}
 
+	public void setEmailAddress(String emailAddress) {
+		System.out.println("CricketCoach: inside Setter method - setEmailAddress");
+		this.emailAddress = emailAddress;
+	}
 
 	public String getTeam() {
 		return team;
 	}
 
-	
 	public void setTeam(String team) {
 		System.out.println("CricketCoach: inside Setter method - setTeam");
 		this.team = team;
