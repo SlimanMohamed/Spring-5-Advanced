@@ -2,20 +2,47 @@ package com.springdemo.annotation;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
+// @ComponentScan("com.luv2code.springdemo")
+@PropertySource("classpath:sport.properties")
 public class SportConfig {
 	
-	//define the bean for our sad Fortune service
+	// add support to resolve ${...} properties
+	//
+	// NOTE: THIS IS ONLY REQUIRED FOR OLD VERSIONS OF SPRING: v4.2 and lower
+	//
+	// This is NOT required if using Spring v4.3+
+	//
 	@Bean
-	public FortuneService SadFortuneService() {
-		 return new SadFortuneService(); 
+	public static PropertySourcesPlaceholderConfigurer
+					propertySourcesPlaceHolderConfigurer() {
+		
+		return new PropertySourcesPlaceholderConfigurer();
 	}
 	
-	// define the bean for our swim Coach  and inject the dependency 
-
-	public Coach SwimCoach() {
-		return new SwimCoach(SadFortuneService());
+	// define bean for our sad fortune service
+	@Bean
+	public FortuneService sadFortuneService() {
+		return new SadFortuneService();
+	}
+	
+	// define bean for our swim coach AND inject dependency
+	@Bean
+	public Coach swimCoach() {
+		SwimCoach mySwimCoach = new SwimCoach(sadFortuneService());
+		
+		return mySwimCoach;
 	}
 	
 }
+
+
+
+
+
+
+
+
