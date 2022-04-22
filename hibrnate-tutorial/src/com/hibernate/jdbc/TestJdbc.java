@@ -7,7 +7,7 @@ public class TestJdbc {
 
 	public static void main(String[] args) {
 		
-		String jdbc="jdbc:mysql://localhost/hibernate";
+		String jdbc="jdbc:mysql://localhost/hb-03-one-to-many";
 		String user="root";
 		String password="";
 		

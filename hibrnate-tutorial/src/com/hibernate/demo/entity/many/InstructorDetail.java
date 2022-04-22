@@ -1,4 +1,4 @@
-package com.hibernate.demo.entity.bi;
+package com.hibernate.demo.entity.many;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -93,11 +93,6 @@ public class InstructorDetail {
 	}
 		
 }
-
-
-
-
-
 
 
 
