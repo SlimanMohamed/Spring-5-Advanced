@@ -1,62 +1,51 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title> List Of Costumer</title>
+<title>List Of Costumer</title>
 </head>
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css " />
 <body>
-<div id="wrapper">
-<div id="header">
-<h2>CRM - Customer Relationship Manager</h2>
-</div>
-</div>
+	<div id="wrapper">
+		<div id="header">
+			<h2>CRM - Customer Relationship Manager</h2>
+		</div>
+	</div>
 
-<div id="container">
-<div id="content">
+	<div id="container">
+		<div id="content">
 
-<!-- add out html table here -->
+			<!-- add out html table here -->
 
-<table>
-<tr>
-<th>First Name </th>
-<th>Last Name </th>
-<th>Email </th>
-</tr>
-<!-- loop over and print our customer  -->
-<c:forEach var="tempCustomer" items="${customers}">
-<tr>
-<td>${tempCustomer.firstName} </td>
-<td>${tempCustomer.lastName} </td>
-<td>${tempCustomer.email} </td>
-
-
-
-</tr>
-
-
-</c:forEach>
+			<table>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+			</tr>
+			<!-- loop over and print our customer  --> <c:forEach
+				var="tempCustomer" items="${customers}">
+				<tr>
+					<td>${tempCustomer.firstName}</td>
+					<td>${tempCustomer.lastName}</td>
+					<td>${tempCustomer.email}</td>
 
 
 
+				</tr>
 
 
+			</c:forEach>
 
+
+			</table>
+		</div>
 
 
 
 
-
-
-</table>
-
-
-
-</div>
-
-
-
-
-</div>
+	</div>
 
 
 

@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.*;
 
 /**
  * Servlet implementation class TestDbServlet
@@ -39,7 +38,8 @@ public class TestDbServlet extends HttpServlet {
 			out.println("Succes!!!!!");
 			cnx.close();
 			
-		} catch (Exception ex) {
+		} 
+		catch (Exception ex) {
 			ex.getStackTrace();
 			throw new ServletException(ex);
 		}
